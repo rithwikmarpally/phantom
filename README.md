@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Phantom — Contract-Based Elite Developer Landing Page
 
-## Getting Started
+Premium, conversion-focused landing page for a contract-based elite software developer. Built with the Next.js App Router, strict TypeScript, Tailwind v4, and Framer Motion. Contact is powered by a Server Action with inline validation and a strong success state.
 
-First, run the development server:
+### Stack
+- Next.js 16 (App Router) with React 19 and React Compiler
+- Tailwind CSS v4 with custom dark theme
+- Framer Motion for subtle premium animations
+- Lucide icons
+- Server Actions for the contact form
 
+### Getting Started
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# lint before shipping
+npm run lint
+# production build
+npm run build
 ```
+Visit http://localhost:3000 to view the site.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Key Sections
+- Hero with dual CTAs and animated background
+- Proof of capability (tech surfaces + delivery metrics)
+- Outcome-focused services with conversion CTAs
+- Why clients choose me (communication, speed, scale, business-first)
+- Selected work with problem / solution / result and stacks
+- Scarcity & availability notice
+- Contact form with server-side handling and success messaging
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Notes
+- Open Graph image lives at /public/og.svg and is referenced in app/layout.tsx.
+- The contact action logs submissions server-side; wire to your email/CRM as needed.

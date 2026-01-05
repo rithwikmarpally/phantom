@@ -1,0 +1,19 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#05060F"/>
+  <g filter="url(#blur)">
+    <circle cx="280" cy="160" r="220" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="980" cy="120" r="260" fill="#38BDF8" fill-opacity="0.2"/>
+    <circle cx="600" cy="520" r="260" fill="#A855F7" fill-opacity="0.18"/>
+  </g>
+  <rect x="120" y="140" width="960" height="350" rx="28" fill="#0B1023" fill-opacity="0.8" stroke="#1F2937"/>
+  <text x="180" y="260" fill="#10B981" font-family="'Inter', 'Helvetica Neue', Arial" font-size="18" font-weight="600" letter-spacing="0.3em">CONTRACT-BASED • ELITE DELIVERY • LIMITED OPENINGS</text>
+  <text x="180" y="320" fill="white" font-family="'Inter', 'Helvetica Neue', Arial" font-size="52" font-weight="700">Revenue-grade software, built fast by an elite developer.</text>
+  <text x="180" y="380" fill="#CBD5E1" font-family="'Inter', 'Helvetica Neue', Arial" font-size="24" font-weight="500">
+    Web, mobile, AI systems, and agents delivered with founder-level urgency.
+  </text>
+  <defs>
+    <filter id="blur" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="90" result="blurred" />
+    </filter>
+  </defs>
+</svg>

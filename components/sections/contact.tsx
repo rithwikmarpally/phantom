@@ -1,21 +1,12 @@
 "use client";
 
-import { useActionState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
-import { Loader2 } from "lucide-react";
+import { Loader2, CheckCircle } from "lucide-react";
 import { Section } from "@/components/ui/section";
-import { submitContact, type ContactFormState } from "@/app/actions/contact";
-
-const initialState: ContactFormState = {
-  status: "idle",
-  message: "",
-};
 
 export default function Contact() {
-  const [state, formAction, pending] = useActionState(
-    submitContact,
-    initialState,
-  );
+  const [state, handleSubmit] = useForm("xbdlwekd");
 
   return (
     <Section id="contact">
@@ -36,12 +27,27 @@ export default function Contact() {
         </p>
       </motion.div>
 
+      {state.succeeded ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="max-w-lg mx-auto text-center space-y-4"
+        >
+          <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-6 py-8">
+            <CheckCircle className="mx-auto mb-4 text-emerald-400" size={48} />
+            <h3 className="text-xl font-light text-white mb-2">Message sent!</h3>
+            <p className="text-sm text-emerald-200/80">
+              Thanks for reaching out. I&apos;ll get back to you within a day.
+            </p>
+          </div>
+        </motion.div>
+      ) : (
       <motion.form
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
         viewport={{ once: true }}
-        action={formAction}
+        onSubmit={handleSubmit}
         className="max-w-lg mx-auto space-y-5"
       >
         <div className="grid gap-5 sm:grid-cols-2">
@@ -68,6 +74,12 @@ export default function Contact() {
               required
               placeholder="you@company.com"
               className="w-full rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors"
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+              className="text-xs text-red-400 mt-1"
             />
           </div>
         </div>
@@ -101,37 +113,28 @@ export default function Contact() {
         <div className="pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <button
             type="submit"
-            disabled={pending}
+            disabled={state.submitting}
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.02] px-6 py-3 text-sm text-white/80 transition-all hover:border-violet-500/30 hover:bg-violet-500/5 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {pending && <Loader2 size={16} className="animate-spin" />}
-            {pending ? "Sending..." : "Send message"}
+            {state.submitting && <Loader2 size={16} className="animate-spin" />}
+            {state.submitting ? "Sending..." : "Send message"}
           </button>
           <p className="text-xs text-[#5a6678]">
             Usually reply within a day.
           </p>
         </div>
 
-        {state.status === "success" && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-200/80"
-          >
-            {state.message}
-          </motion.div>
-        )}
-
-        {state.status === "error" && (
+        {state.errors && Object.keys(state.errors).length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="rounded-lg border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm text-red-200/80"
           >
-            {state.message}
+            Something went wrong. Please try again.
           </motion.div>
         )}
       </motion.form>
+      )}
     </Section>
   );
 }

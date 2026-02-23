@@ -21,14 +21,14 @@ export default function Availability() {
             Availability
           </p>
           <p className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90">
-            Selective work only.
+            We take on a limited number of projects
             <br />
-            <span className="text-[#5a6678]">Two openings this quarter.</span>
+            <span className="text-[#5a6678]">so every client gets our full attention.</span>
           </p>
           <p className="text-sm text-[#5a6678] leading-relaxed">
-            I take on projects that are worth the focus.
+            A few spots are open this quarter.
             <br />
-            If the timing isn&apos;t right, I&apos;ll tell you honestly.
+            Reach out and let&apos;s see if we&apos;re a good fit.
           </p>
         </div>
       </motion.div>

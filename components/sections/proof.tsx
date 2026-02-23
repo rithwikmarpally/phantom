@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
 
 const domains = [
-  { id: "web", label: "Web", description: "Platforms that scale" },
-  { id: "mobile", label: "Mobile", description: "Experiences that travel" },
-  { id: "ai", label: "AI", description: "Intelligence with purpose" },
-  { id: "agents", label: "Agents", description: "Automation with guardrails" },
-  { id: "systems", label: "Systems", description: "Architecture that endures" },
-  { id: "cloud", label: "Cloud", description: "Infrastructure that breathes" },
+  { id: "web", label: "Websites", description: "Landing pages, web apps & platforms" },
+  { id: "mobile", label: "Mobile Apps", description: "iOS & Android apps that users love" },
+  { id: "ai", label: "AI Agents", description: "Chatbots, assistants & automations" },
+  { id: "infra", label: "AI Infra", description: "Pipelines, deployment & monitoring" },
+  { id: "saas", label: "SaaS", description: "Subscription products & dashboards" },
+  { id: "mvp", label: "MVPs", description: "Quick prototypes to test your idea" },
 ];
 
 export default function Proof() {
@@ -25,9 +25,9 @@ export default function Proof() {
           className="max-w-2xl"
         >
           <p className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90">
-            Building software is easy.
+            Anyone can write code.
             <br />
-            <span className="text-[#5a6678]">Building the right software is rare.</span>
+            <span className="text-[#5a6678]">We build software that actually moves your business forward.</span>
           </p>
         </motion.div>
 

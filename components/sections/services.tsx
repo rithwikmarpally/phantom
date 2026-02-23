@@ -6,28 +6,28 @@ import { Section } from "@/components/ui/section";
 
 const ideas = [
   {
-    id: "platforms",
-    trigger: "Platforms",
-    expanded: "Web applications that become infrastructure. Built for the long arc.",
+    id: "websites",
+    trigger: "Websites",
+    expanded: "Beautiful, fast websites and web apps that look great on every device. Whether you need a landing page, a business site, or a full web platform \u2014 we build it from scratch, tailored to your brand.",
     image: "/images/web.jpg",
   },
   {
-    id: "interfaces",
-    trigger: "Interfaces",
-    expanded: "Mobile and desktop experiences that feel inevitable. Craft over flash.",
-    image: "/images/interface.jpg",
-  },
-  {
-    id: "intelligence",
-    trigger: "Intelligence",
-    expanded: "AI systems with observable behavior. Deterministic where it matters.",
+    id: "ai-agents",
+    trigger: "AI Agents",
+    expanded: "Smart assistants that handle tasks for you \u2014 customer support bots, data processors, workflow automators. We build AI agents that save your team hours of manual work every day.",
     image: "/images/intelligence.jpg",
   },
   {
-    id: "autonomy",
-    trigger: "Autonomy",
-    expanded: "Agents that work within constraints. Automation with human-in-the-loop.",
+    id: "ai-infra",
+    trigger: "AI Infrastructure",
+    expanded: "The behind-the-scenes tech that powers AI products \u2014 data pipelines, model deployment, monitoring, and scaling. We set up the foundation so your AI actually works in production.",
     image: "/images/autonomous.jpg",
+  },
+  {
+    id: "projects",
+    trigger: "Custom Projects",
+    expanded: "Got an idea that doesn\u2019t fit a box? Mobile apps, SaaS platforms, internal tools, MVPs for startups \u2014 we take your concept and turn it into a working product, end to end.",
+    image: "/images/interface.jpg",
   },
 ];
 
@@ -38,16 +38,6 @@ export default function Services() {
   return (
     <Section>
       <div className="space-y-16">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-sm tracking-[0.2em] uppercase text-[#5a6678]"
-        >
-          What I build
-        </motion.p>
-
         <div className="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-16">
           {/* Left: Accordion list */}
           <div className="space-y-1">
@@ -162,33 +152,16 @@ export default function Services() {
                   />
                   {/* Fallback gradient if image not loaded */}
                   <div className={`absolute inset-0 transition-opacity duration-500 ${
-                    idea.id === "platforms" ? "bg-gradient-to-br from-violet-900/40 via-slate-900/60 to-blue-900/40" :
-                    idea.id === "interfaces" ? "bg-gradient-to-br from-blue-900/40 via-slate-900/60 to-cyan-900/40" :
-                    idea.id === "intelligence" ? "bg-gradient-to-br from-emerald-900/40 via-slate-900/60 to-teal-900/40" :
-                    "bg-gradient-to-br from-amber-900/40 via-slate-900/60 to-orange-900/40"
+                    idea.id === "websites" ? "bg-gradient-to-br from-violet-900/40 via-slate-900/60 to-blue-900/40" :
+                    idea.id === "ai-agents" ? "bg-gradient-to-br from-emerald-900/40 via-slate-900/60 to-teal-900/40" :
+                    idea.id === "ai-infra" ? "bg-gradient-to-br from-amber-900/40 via-slate-900/60 to-orange-900/40" :
+                    "bg-gradient-to-br from-blue-900/40 via-slate-900/60 to-cyan-900/40"
                   }`} />
                   
                   {/* Noise texture overlay */}
                   <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]" />
                 </motion.div>
               ))}
-
-              {/* Default state - no hover */}
-              <AnimatePresence>
-                {!hovered && !expanded && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    <p className="text-[#3a4452] text-sm tracking-wider">
-                      Hover to explore
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
 
               {/* Active label overlay */}
               <AnimatePresence>

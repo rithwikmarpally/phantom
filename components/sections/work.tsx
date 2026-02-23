@@ -1,31 +1,34 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "@/components/ui/section";
 
-const explorations = [
+const projects = [
   {
-    id: "billing",
-    title: "The invisible leak",
-    hook: "A billing system was quietly losing revenue.",
-    story: "Legacy infrastructure dropped invoices at scale. Rebuilt the pipeline with event-driven architecture. Recovered 7% in 60 days.",
-    signal: "Infrastructure",
+    id: "charaka",
+    title: "Charaka",
+    hook: "An AI-powered health and wellness platform.",
+    story: "We designed and built Charaka from the ground up \u2014 a smart platform that uses AI to deliver personalised health insights. Built with modern web tech and seamless UX.",
+    signal: "AI + Health",
+    url: "https://charaka.app",
   },
   {
-    id: "agent",
-    title: "The support bottleneck",
-    hook: "A team was drowning in repetitive requests.",
-    story: "Deployed a guardrailed AI agent with human-in-the-loop approvals. Reduced handling time by 63% while keeping compliance intact.",
-    signal: "Intelligence",
+    id: "atmiq",
+    title: "Atmiq",
+    hook: "Intelligent infrastructure for next-gen applications.",
+    story: "Atmiq is our take on AI infrastructure done right \u2014 scalable, observable, and built for teams that want to ship AI features fast without reinventing the wheel.",
+    signal: "AI Infra",
+    url: "https://atmiq.dev",
   },
-  {
-    id: "mobile",
-    title: "The funding milestone",
-    hook: "A founder needed a product before the pitch.",
-    story: "Shipped a cross-platform mobile app in 8 weeks. Hit 30k users in month one. Investors saw clear retention metrics.",
-    signal: "Velocity",
-  },
+];
+
+const sampleSites = [
+  { label: "Portfolio \u2014 Coral", url: "https://port-phi-coral.vercel.app/" },
+  { label: "Portfolio \u2014 Rho", url: "https://port3-rho.vercel.app/" },
+  { label: "Business Portfolio", url: "https://port2business.vercel.app/" },
+  { label: "Haruth", url: "https://haruth.vercel.app/" },
 ];
 
 export default function Work() {
@@ -41,15 +44,16 @@ export default function Work() {
           viewport={{ once: true }}
         >
           <p className="text-sm tracking-[0.2em] uppercase text-[#5a6678] mb-4">
-            Selected explorations
+            Our work
           </p>
           <p className="text-xl text-white/60 max-w-lg">
-            Problems I found interesting.
+            Real products we&rsquo;ve shipped for real clients.
           </p>
         </motion.div>
 
+        {/* Featured projects */}
         <div className="space-y-4">
-          {explorations.map((item, idx) => (
+          {projects.map((item, idx) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +76,14 @@ export default function Work() {
                   </h3>
                   <p className="text-sm text-[#5a6678]">{item.hook}</p>
                 </div>
-                <div className="w-2 h-2 mt-2 rounded-full bg-white/5 group-hover:bg-violet-400/40 transition-colors duration-500" />
+                <Link
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 mt-1 text-xs tracking-wide text-violet-400/60 hover:text-violet-400 transition-colors duration-300 border border-white/10 rounded-full px-3 py-1"
+                >
+                  Visit &rarr;
+                </Link>
               </div>
 
               <AnimatePresence>
@@ -93,6 +104,37 @@ export default function Work() {
             </motion.div>
           ))}
         </div>
+
+        {/* Sample websites gallery */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <p className="text-sm tracking-[0.2em] uppercase text-[#5a6678]">
+            Sample websites we&rsquo;ve built
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {sampleSites.map((site) => (
+              <Link
+                key={site.url}
+                href={site.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.01] px-5 py-4 hover:bg-white/[0.03] hover:border-white/10 transition-all duration-400"
+              >
+                <span className="text-sm text-white/70 group-hover:text-white transition-colors duration-300">
+                  {site.label}
+                </span>
+                <span className="text-xs text-[#5a6678] group-hover:text-violet-400/60 transition-colors duration-300">
+                  View &rarr;
+                </span>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </Section>
   );

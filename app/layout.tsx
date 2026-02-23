@@ -13,26 +13,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://phantom.dev"),
-  title: "Phantom",
-  description: "Systems that think. Interfaces that feel alive. Software with intent.",
+  metadataBase: new URL("https://calabixlabs.com"),
+  title: "Calabix Labs",
+  description: "We build websites, AI agents, and smart infrastructure that help businesses grow. From idea to launch — Calabix Labs turns your vision into working software.",
   keywords: [
-    "software engineer",
-    "systems design",
-    "AI development",
-    "product engineering",
+    "web development",
+    "AI agents",
+    "AI infrastructure",
+    "software development",
+    "website design",
+    "Calabix Labs",
   ],
   openGraph: {
-    title: "Phantom",
-    description: "Systems that think. Interfaces that feel alive.",
-    url: "https://phantom.dev",
-    siteName: "Phantom",
+    title: "Calabix Labs",
+    description: "Websites, AI Agents & Smart Infrastructure — built for real businesses.",
+    url: "https://calabixlabs.com",
+    siteName: "Calabix Labs",
     images: [
       {
         url: "/og.svg",
         width: 1200,
         height: 630,
-        alt: "Phantom",
+        alt: "Calabix Labs",
       },
     ],
     locale: "en_US",
@@ -40,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Phantom",
-    description: "Systems that think. Interfaces that feel alive.",
+    title: "Calabix Labs",
+    description: "Websites, AI Agents & Smart Infrastructure — built for real businesses.",
     images: ["/og.svg"],
   },
 };

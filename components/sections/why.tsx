@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
 
 const fragments = [
-  "Clear communication. No translation needed.",
-  "Speed without shortcuts.",
-  "Systems designed for the next 10x.",
-  "Engineering anchored to outcomes.",
+  "We explain everything in plain English — no confusing tech jargon.",
+  "Fast delivery without cutting corners on quality.",
+  "We build things that scale as your business grows.",
+  "Every line of code is tied to a real business goal.",
 ];
 
 export default function Why() {
@@ -22,12 +22,12 @@ export default function Why() {
           className="max-w-xl"
         >
           <p className="text-sm tracking-[0.2em] uppercase text-[#5a6678] mb-8">
-            How I work
+            How we work
           </p>
           <p className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90">
-            I don&apos;t just write code.
+            We don&apos;t just write code.
             <br />
-            <span className="text-[#5a6678]">I solve problems worth solving.</span>
+            <span className="text-[#5a6678]">We solve real problems for real people.</span>
           </p>
         </motion.div>
 

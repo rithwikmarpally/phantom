@@ -16,12 +16,14 @@ export default function Hero() {
         >
           <div className="space-y-6">
             <p className="text-sm tracking-[0.3em] uppercase text-[#5a6678]">
-              Software with intent
+              Calabix Labs
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.1] tracking-tight text-white">
-              Systems that think.
+              We build websites,
               <br />
-              <span className="text-[#5a6678]">Interfaces that feel alive.</span>
+              AI agents &amp; smart infra.
+              <br />
+              <span className="text-[#5a6678]">You focus on your business.</span>
             </h1>
           </div>
 
@@ -31,9 +33,9 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="text-lg text-[#5a6678] max-w-xl mx-auto leading-relaxed"
           >
-            I build software that solves problems worth solving.
+            From a simple landing page to a full AI-powered platform &mdash;
             <br />
-            Limited engagements. Thoughtful work.
+            we turn your idea into software that actually works.
           </motion.p>
 
           <motion.div
@@ -47,7 +49,7 @@ export default function Hero() {
               className="group inline-flex items-center gap-3 text-sm tracking-wide text-white/80 hover:text-white transition-colors duration-500"
             >
               <span className="h-px w-8 bg-white/20 group-hover:w-12 group-hover:bg-violet-400/60 transition-all duration-500" />
-              Start a conversation
+              Tell us what you need
             </Link>
           </motion.div>
         </motion.div>

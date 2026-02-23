@@ -18,12 +18,12 @@ export default function Contact() {
         className="max-w-xl mx-auto text-center space-y-4 mb-12"
       >
         <p className="text-sm tracking-[0.2em] uppercase text-[#5a6678]">
-          Start a conversation
+          Get in touch
         </p>
         <p className="text-2xl sm:text-3xl font-light text-white/90">
-          If you made it this far,
+          Have a project in mind?
           <br />
-          <span className="text-[#5a6678]">you already know.</span>
+          <span className="text-[#5a6678]">Let&apos;s talk about what you need.</span>
         </p>
       </motion.div>
 
@@ -37,7 +37,7 @@ export default function Contact() {
             <CheckCircle className="mx-auto mb-4 text-emerald-400" size={48} />
             <h3 className="text-xl font-light text-white mb-2">Message sent!</h3>
             <p className="text-sm text-emerald-200/80">
-              Thanks for reaching out. I&apos;ll get back to you within a day.
+              Thanks for reaching out. We&apos;ll get back to you within a day.
             </p>
           </div>
         </motion.div>

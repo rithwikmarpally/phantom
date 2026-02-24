@@ -60,7 +60,7 @@ export default function Contact() {
               name="name"
               required
               placeholder="Your name"
-              className="w-full rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors"
+              className="w-full rounded-lg border border-white/10 bg-white/2 px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors"
             />
           </div>
           <div className="space-y-2">
@@ -73,7 +73,7 @@ export default function Contact() {
               type="email"
               required
               placeholder="you@company.com"
-              className="w-full rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors"
+              className="w-full rounded-lg border border-white/10 bg-white/2 px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors"
             />
             <ValidationError
               prefix="Email"
@@ -92,7 +92,7 @@ export default function Contact() {
             id="company"
             name="company"
             placeholder="Company or team"
-            className="w-full rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors"
+            className="w-full rounded-lg border border-white/10 bg-white/2 px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors"
           />
         </div>
 
@@ -106,7 +106,7 @@ export default function Contact() {
             required
             rows={4}
             placeholder="Tell me about it..."
-            className="w-full rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors resize-none"
+            className="w-full rounded-lg border border-white/10 bg-white/2 px-4 py-3 text-sm text-white placeholder:text-[#3a4452] focus:border-violet-500/50 focus:outline-none transition-colors resize-none"
           />
         </div>
 
@@ -114,7 +114,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={state.submitting}
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.02] px-6 py-3 text-sm text-white/80 transition-all hover:border-violet-500/30 hover:bg-violet-500/5 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/2 px-6 py-3 text-sm text-white/80 transition-all hover:border-violet-500/30 hover:bg-violet-500/5 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {state.submitting && <Loader2 size={16} className="animate-spin" />}
             {state.submitting ? "Sending..." : "Send message"}

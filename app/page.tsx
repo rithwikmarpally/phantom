@@ -1,3 +1,4 @@
+import About from "@/components/sections/about";
 import Availability from "@/components/sections/availability";
 import Contact from "@/components/sections/contact";
 import Hero from "@/components/sections/hero";
@@ -15,6 +16,7 @@ export default function Home() {
       <Work />
       <Availability />
       <Contact />
+      <About />
     </main>
   );
 }
